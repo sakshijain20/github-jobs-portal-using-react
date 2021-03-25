@@ -59,7 +59,7 @@
     outline: none;
 }
 
-#search-button{
+.search-button{
     height: 35px;
     width: 80px;
     border: none;
