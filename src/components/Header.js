@@ -30,4 +30,4 @@ class Header extends React.Component{
 }
 
 ReactDOM.render(<Header  />, document.getElementById('root'));
-export default Header
+export default Header;
