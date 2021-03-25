@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Card from './Card'
 
 
 class Header extends React.Component{
@@ -25,9 +26,9 @@ class Header extends React.Component{
         xhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
                 var json = JSON.parse(this.responseText);
-
+                console.log(json);
                 main_data.setState({
-                    data: main_data.state.data.concat(json)
+                    data: json
                 })
 
             }
@@ -51,7 +52,7 @@ class Header extends React.Component{
             if (this.readyState === 4 && this.status === 200) {
                 var json = JSON.parse(this.responseText);
                 main_data.setState({
-                    data: main_data.state.data.concat(json)
+                    data: json
                 })
 
             }
@@ -65,7 +66,7 @@ class Header extends React.Component{
     render(){
         return (
             <React.Fragment>
-                <div>
+            
                     <div className="header">
                         <div className="header-items">
                             <h1>devjobs</h1>
@@ -85,9 +86,13 @@ class Header extends React.Component{
                     </div>
 
 
-                <button type="button" className="load_btn" onClick={this.getData}>Load More</button>
-
-                </div>
+               
+               
+               {
+                    this.state.is_data_loaded ? <Card content={this.state.data} /> : <p></p>
+                }
+                     <button type="button" className="load_btn" onClick={this.getData}>Load More</button>
+            
                 </React.Fragment>
             );
     }
