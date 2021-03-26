@@ -14,9 +14,9 @@ class JobView extends React.Component {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
-                var json = JSON.parse(this.responseText)
+                var js = JSON.parse(this.responseText)
                  content.setState({
-                    description: json
+                    description: js
                 })
                 document.getElementsByClassName('description-body')[0].innerHTML += content.state.description.description
                 document.getElementsByClassName('description-body')[0].innerHTML += content.state.description.how_to_apply

@@ -7,7 +7,7 @@ class Router extends Component {
   render() {
     return (
       <Switch>
-        <Route path="/header" component={Header} />
+        <Route path="/" component={Header} />
         <Route path="/job/:id" component={JobView} />
 )}/>
       </Switch>
